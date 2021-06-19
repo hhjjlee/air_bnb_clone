@@ -74,11 +74,12 @@ class Photo(core_models.TimeStampedModel):
 class Room(core_models.TimeStampedModel):
 
     name = models.CharField(max_length=140)
-    description = models.TextField()
-    counties = CountryField()
+    description = models.TextField() 
+    country = CountryField()
     city = models.CharField(max_length=80)
     price = models.IntegerField()
     address = models.CharField(max_length=140)
+    guest = models.IntegerField(help_text="How manay people will be staying?")
     beds = models.IntegerField()
     bedrooms = models.IntegerField()
     baths = models.IntegerField()
